@@ -1,0 +1,24 @@
+<div class="widgets">    
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="Form Wizard" ba-panel-class="with-scroll">
+                    <ba-wizard>
+                        <ba-wizard-step title="Personal info" form="vm.personalInfoForm">
+                            <personal-form></personal-form>
+                        </ba-wizard-step>
+                        <ba-wizard-step title="Product Info" form="vm.productInfoForm">
+                            <product-form></product-form>
+                        </ba-wizard-step>
+                        <ba-wizard-step title="Shipment"  form="vm.addressForm">
+                            <shipping-form></shipping-form>
+                        </ba-wizard-step>
+                        <ba-wizard-step title="Finish">
+                            <form class="form-horizontal" name="vm.finishForm" novalidate>
+                                Congratulations! You have successfully filled the form!
+                            </form>
+                        </ba-wizard-step>
+                    </ba-wizard>
+                </div>
+            </div>
+        </div>
+    </div>

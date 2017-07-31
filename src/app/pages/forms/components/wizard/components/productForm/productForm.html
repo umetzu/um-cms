@@ -1,0 +1,27 @@
+<form name="vm.productInfoForm" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group has-feedback"
+                 ng-class="{'has-error': vm.productInfoForm.productName.$invalid && (vm.productInfoForm.productName.$dirty || vm.productInfoForm.$submitted)}">
+                <label for="productName">Product name</label>
+                <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name" ng-model="vm.productInfo.productName" required>
+                <span class="help-block error-block basic-block">Required</span>
+            </div>
+            <div class="form-group" ng-class="{'has-error': vm.productInfoForm.productId.$invalid && (vm.productInfoForm.productId.$dirty || vm.productInfoForm.$submitted)}">
+                <label for="productId">Product id</label>
+                <input type="text" class="form-control" id="productId" name="productId" placeholder="productId" ng-model="vm.productInfo.productId" required>
+                <span class="help-block error-block basic-block">Required</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="productName">Category</label>
+                <select class="form-control" title="Category" selectpicker>
+                    <option selected>Electronics</option>
+                    <option>Toys</option>
+                    <option>Accessories</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>
