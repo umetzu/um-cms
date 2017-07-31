@@ -1,28 +1,27 @@
-<form name="vm.personalInfoForm" novalidate>
+<form [formGroup]="form" name="personalForm" novalidate>
     <div class="row">
         <div class="col-md-6">
-            <div class="form-group has-feedback"
-                 ng-class="{'has-error': vm.personalInfoForm.username.$invalid && (vm.personalInfoForm.username.$dirty || vm.personalInfoForm.$submitted)}">
+            <div class="form-group has-feedback" [ngClass]="{'has-error': (!username.valid && username.touched), 'has-success': (username.valid && username.touched)}">
                 <label for="exampleUsername1">Username</label>
-                <input type="text" class="form-control" id="exampleUsername1" name="username" placeholder="Username" ng-model="vm.personalInfo.username" required>
+                <input [formControl]="username" type="text" class="form-control" id="exampleUsername1" placeholder="Username" required>
                 <span class="help-block error-block basic-block">Required</span>
             </div>
-            <div class="form-group" ng-class="{'has-error': vm.personalInfoForm.email.$invalid && (vm.personalInfoForm.email.$dirty || vm.personalInfoForm.$submitted)}">
+            <div class="form-group" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email" ng-model="vm.personalInfo.email" required>
+                <input [formControl]="email" type="email" class="form-control" id="exampleInputEmail1"  placeholder="Email" required>
                 <span class="help-block error-block basic-block">Proper email required</span>
             </div>
         </div>
         <div class="col-md-6">
-            <div class="form-group" ng-class="{'has-error': vm.personalInfoForm.password.$invalid && (vm.personalInfoForm.password.$dirty || vm.personalInfoForm.$submitted)}">
+            <div class="form-group" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" ng-model="vm.personalInfo.password" required>
+                <input [formControl]="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
                 <span class="help-block error-block basic-block">Required</span>
             </div>
-            <div class="form-group"  ng-class="{'has-error': !vm.arePersonalInfoPasswordsEqual() && (vm.personalInfoForm.confirmPassword.$dirty || vm.personalInfoForm.$submitted)}">
+            <div class="form-group" [ngClass]="{'has-error': (!repeatPassword.valid && repeatPassword.touched), 'has-success': (repeatPassword.valid && repeatPassword.touched)}">
                 <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputConfirmPassword1" name="confirmPassword" placeholder="Confirm Password" ng-model="vm.personalInfo.confirmPassword" required>
-                <span class="help-block error-block basic-block">Passwords should match</span>
+                <input [formControl]="repeatPassword" type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Confirm Password" required>
+                <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block error-block basic-block">Passwords should match</span>
             </div>
         </div>
     </div>

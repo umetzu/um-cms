@@ -1,15 +1,16 @@
-<form name="vm.productInfoForm" novalidate>
+<form name="productForm" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group has-feedback"
-                 ng-class="{'has-error': vm.productInfoForm.productName.$invalid && (vm.productInfoForm.productName.$dirty || vm.productInfoForm.$submitted)}">
+            [ngClass]="{'has-error': (!productName.valid && productName.touched), 'has-success': (productName.valid && productName.touched)}">
                 <label for="productName">Product name</label>
-                <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name" ng-model="vm.productInfo.productName" required>
+                <input [formControl]="username" type="text" class="form-control" id="productName" placeholder="Product name" required>
                 <span class="help-block error-block basic-block">Required</span>
             </div>
-            <div class="form-group" ng-class="{'has-error': vm.productInfoForm.productId.$invalid && (vm.productInfoForm.productId.$dirty || vm.productInfoForm.$submitted)}">
-                <label for="productId">Product id</label>
-                <input type="text" class="form-control" id="productId" name="productId" placeholder="productId" ng-model="vm.productInfo.productId" required>
+            <div class="form-group has-feedback"
+            [ngClass]="{'has-error': (!productId.valid && productId.touched), 'has-success': (productId.valid && productId.touched)}">
+                <label for="productId">Product Id</label>
+                <input [formControl]="username" type="text" class="form-control" id="productId" placeholder="Product Id" required>
                 <span class="help-block error-block basic-block">Required</span>
             </div>
         </div>

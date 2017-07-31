@@ -169,6 +169,14 @@ export const PAGES_MENU = [
                 title: 'general.menu.form_layouts',
               }
             }
+          },
+          {
+            path: 'wizard',
+            data: {
+              menu: {
+                title: 'general.menu.form_wizard',
+              }
+            }
           }
         ]
       },

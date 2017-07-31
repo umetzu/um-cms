@@ -10,9 +10,8 @@
              aria-valuemin="0" aria-valuemax="100" ng-style="{width: $baWizardController.progress + '%'}">
         </div>
     </div>
-
+    
     <div class="steps" ng-transclude></div>
-
     <nav>
         <ul class="pager ba-wizard-pager">
             <li class="previous"><button  ng-disabled="$baWizardController.isFirstTab()" ng-click="$baWizardController.previousTab()" type="button" class=" btn btn-primary"><span aria-hidden="true">&larr;</span> previous</button></li>

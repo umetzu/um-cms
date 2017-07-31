@@ -5,11 +5,12 @@ import { AppTranslationModule } from '../../app.translation.module';
 import { NgaModule } from '../../theme/nga.module';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { routing }       from './forms.routing';
+import { routing } from './forms.routing';
 
 import { Forms } from './forms.component';
 import { Inputs } from './components/inputs';
 import { Layouts } from './components/layouts';
+import { Wizard } from './components/wizard';
 
 import { StandardInputs } from './components/inputs/components/standardInputs';
 import { ValidationInputs } from './components/inputs/components/validationInputs';
@@ -24,6 +25,10 @@ import { HorizontalForm } from './components/layouts/components/horizontalForm';
 import { BasicForm } from './components/layouts/components/basicForm';
 import { WithoutLabelsForm } from './components/layouts/components/withoutLabelsForm';
 
+import { PersonalForm } from './components/wizard/components/personalForm';
+import { ProductForm } from './components/wizard/components/productForm';
+import { ShippingForm } from './components/wizard/components/shippingForm';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -34,6 +39,10 @@ import { WithoutLabelsForm } from './components/layouts/components/withoutLabels
     routing
   ],
   declarations: [
+    PersonalForm,
+    ProductForm,
+    ShippingForm,
+    Wizard,
     Layouts,
     Inputs,
     Forms,

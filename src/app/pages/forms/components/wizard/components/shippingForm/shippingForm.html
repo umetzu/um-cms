@@ -1,10 +1,10 @@
-<form name="vm.addressForm" novalidate>
+<form name="shippingForm" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group has-feedback"
-                 ng-class="{'has-error': vm.addressForm.address.$invalid && (vm.addressForm.address.$dirty || vm.addressForm.$submitted)}">
-                <label for="productName">Shipment address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Shipment address" ng-model="vm.shipment.address" required>
+                [ngClass]="{'has-error': (!address.valid && address.touched), 'has-success': (address.valid && address.touched)}">
+                <label for="address">Shipment address</label>
+                <input [formControl]="address" type="text" class="form-control" id="address" placeholder="Shipment address" required>
                 <span class="help-block error-block basic-block">Required</span>
             </div>
         </div>
